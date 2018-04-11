@@ -6,12 +6,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="css/main.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travelville</title>
 </head>
 
-<body>
+<body id="home" class="scrollspy">
 
     <div class="navbar-fixed">
         <nav class="teal">
@@ -91,6 +92,20 @@
         </ul>
     </section>
 
+    <!-- SECTION: Search -->
+    <section id="search" class="section section-search teal darken-1 white-text center scrollspy">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h3>Search Destinations</h3>
+                    <div class="input-field">
+                        <input type="text" class="white grey-text autocomplete" id="autocomplete-input" placeholder="Aruba, Cancun, etc...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 
 
@@ -110,6 +125,19 @@
             transition: 500,
             interval: 6000
         })
+
+        // Autocomplete
+        const ac = document.querySelector('.autocomplete');
+        M.Autocomplete.init(ac, {
+            data: {
+                "Aruba": null,
+                "Cancun Mexico": null,
+                "Hawai": null,
+                "Florid": null,
+                "California": null,
+                "Europe": null
+            }
+        });
     </script>
 </body>
 
